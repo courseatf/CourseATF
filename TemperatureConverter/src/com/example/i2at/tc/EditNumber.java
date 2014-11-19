@@ -46,7 +46,7 @@ public class EditNumber extends EditText {
 
 	public void setNumber(double f) {
 		android.util.Log.d("setNumber", "setting f=" + f + " => " + Double.toString(f));
-		setText(Double.toString(f));
+		setText(String.format("%.2f", f));
 	}
 
 	public double getNumber() {

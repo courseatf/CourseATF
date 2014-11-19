@@ -69,6 +69,11 @@ public class EditNumberTests extends AndroidTestCase {
 	 */
 	public final void testSetNumber() {
 		/* TODO 8: 값은 10진수로 소수점 둘째 자리까지 표현되어야 함 */
+		final double d = 123.456;
+		mEditNumber.setNumber(d);
+		final String expected = "123.46";
+		final String actual = mEditNumber.getText().toString();
+		assertEquals(expected, actual);
 	}
 
 	/**
