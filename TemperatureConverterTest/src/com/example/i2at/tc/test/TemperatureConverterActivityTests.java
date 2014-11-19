@@ -78,8 +78,9 @@ public class TemperatureConverterActivityTests extends
     @SmallTest
     public void testFieldsShouldStartEmpty() {
     	/* TODO #1. 최소 실행 시 각 field 는 비워져 있어야 함
-    	 * 	 field : mCelsius, mFahrenheit
-    	 */
+    	 * 	 field : mCelsius, mFahrenheit */
+        assertTrue("".equals(mCelsius.getText().toString()));
+        assertTrue("".equals(mFahrenheit.getText().toString()));
     }
 
     @SmallTest
