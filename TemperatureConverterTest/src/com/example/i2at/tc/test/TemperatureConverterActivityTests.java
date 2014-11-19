@@ -89,6 +89,11 @@ public class TemperatureConverterActivityTests extends
         /* TODO 3: 숫자는 오른쪽 정렬로 되어야 하고 수직 중앙 정렬되어야 함
          * Hint:  EditText.getGravity()
          */
+    	final int celsiusGravity = mCelsius.getGravity();
+    	final int fahrenheitGravity = mFahrenheit.getGravity();
+    	
+    	assertEquals((Gravity.RIGHT|Gravity.CENTER_VERTICAL), celsiusGravity);
+    	assertEquals((Gravity.RIGHT|Gravity.CENTER_VERTICAL), fahrenheitGravity);
     }
 
     @SmallTest
