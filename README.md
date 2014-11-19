@@ -1,6 +1,6 @@
-CourseATF
+ï»¿CourseATF
 =========
 
 course of android testing framework
 
-* watermelon: ÇÑ°æ¶õ,±èÁø¿µ
+* watermelon: í•œê²½ë€,ê¹€ì§„ì˜
