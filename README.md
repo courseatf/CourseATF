@@ -8,3 +8,4 @@ course of android testing framework
 * yongjin.heo, sh80.choi
 * herherher
 * ourteam: kyungsoo song Jaebeom Jeon
+* 5-coffee: hyunoklee
