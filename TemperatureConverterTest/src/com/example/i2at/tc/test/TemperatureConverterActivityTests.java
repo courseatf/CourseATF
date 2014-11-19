@@ -80,8 +80,8 @@ public class TemperatureConverterActivityTests extends
     	/* TODO #1. 최소 실행 시 각 field 는 비워져 있어야 함
     	 * 	 field : mCelsius, mFahrenheit
     	 */
-    	assertTrue("", equals(mCelsius.getText().toString()));
-    	assertTrue("", equals(mFahrenheit.getText().toString()));
+    	assertTrue("".equals(mCelsius.getText().toString()));
+    	assertTrue("".equals(mFahrenheit.getText().toString()));
     }
 
     @SmallTest
@@ -89,6 +89,8 @@ public class TemperatureConverterActivityTests extends
         /* TODO 3: 숫자는 오른쪽 정렬로 되어야 하고 수직 중앙 정렬되어야 함
          * Hint:  EditText.getGravity()
          */
+    	assertEquals(Gravity.RIGHT|Gravity.CENTER_VERTICAL, mCelsius.getGravity());
+    	assertEquals(Gravity.RIGHT|Gravity.CENTER_VERTICAL, mFahrenheit.getGravity());
     }
 
     @SmallTest
