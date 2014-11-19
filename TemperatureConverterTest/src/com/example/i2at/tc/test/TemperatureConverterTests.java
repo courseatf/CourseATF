@@ -5,7 +5,11 @@ package com.example.i2at.tc.test;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
+
+import android.util.Log;
 
 import com.example.i2at.tc.TemperatureConverter;
 
@@ -21,7 +25,7 @@ public class TemperatureConverterTests extends TestCase {
 			new HashMap<Double, Double>();
 	
 	static {
-		sConversionTableDouble.put(0.0, 32.0);
+		sConversionTableDouble.put(0.0, 32.0); // 섭씨 , 화씨 
 		sConversionTableDouble.put(100.0, 212.0);
 		sConversionTableDouble.put(-1.0, 30.20);
 		sConversionTableDouble.put(-100.0, -148.0);
@@ -58,6 +62,40 @@ public class TemperatureConverterTests extends TestCase {
 		/* TODO 6: 섭씨온도와 화씨온도를 서로 변환할 수 있어야 함. (기대 값의 허용오차는 0.005 로 가정)
 		 * 미리 준비 된 변환 테이블을 참조하여 작성(sConversionTableDouble)
 		 */
+		//////////////////////////////////////////////////
+		///섭씨
+        Collection<Double> keys = sConversionTableDouble.keySet();
+        Iterator<Double> Ir_keys ;
+        Ir_keys = keys.iterator();
+         
+        while (Ir_keys.hasNext()) {
+           // Log.d("testt","" + Ir_keys.next() );
+            double c = Ir_keys.next();
+            double expected = TemperatureConverter.celsiusToFahrenheit(c);            
+            double actual = c;
+            double delta = Math.abs(expected - actual);
+            assertTrue("delta=" + delta + " expected=" + expected + " actual=" + actual, delta < 0.005);
+     
+        }
+
+       ////////////////////////////////////////////////
+        /// 화씨
+        
+        Collection<Double> values = sConversionTableDouble.values();
+        Iterator<Double> Ir_values;
+        Ir_values = values.iterator();
+         
+        while (Ir_values.hasNext()) {
+            Log.d("testt","" + Ir_values.next());
+            double f = Ir_keys.next();
+            double expected = TemperatureConverter.fahrenheitToCelsius(f);            
+            double actual = f;
+            double delta = Math.abs(expected - actual);
+            assertTrue("delta=" + delta + " expected=" + expected + " actual=" + actual, delta < 0.005);
+             
+        }
+        
+		
 	}
 
 	/**
