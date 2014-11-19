@@ -29,11 +29,9 @@ public class TemperatureConverterTests extends TestCase {
 		sConversionTableDouble.put(-40.0, -40.0);
 		sConversionTableDouble.put(-273.0, -459.40);
 	}
-<<<<<<< HEAD
-=======
 
 	TemperatureConverter m_Tc;
->>>>>>> a289d6e77e42b4bde5caa2a33e7472c5848d65d4
+
 	/**
 	 * @param name
 	 */
