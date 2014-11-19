@@ -134,7 +134,7 @@ public class TemperatureConverterActivityTests extends
         final double delta = Math.abs(expected - actual);
         assertTrue("delta=" + delta + " expected=" + expected + " actual=" + actual, delta < 0.005);
 
-    	assertTrue(true);
+    	//assertTrue(true);
     }
 
     public void testFahrenheitToCelsiusConversion_text() throws Throwable {
