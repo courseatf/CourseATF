@@ -107,8 +107,8 @@ public class TemperatureConverterActivityTests extends
         assertTrue(mCelsius.requestFocus());
         assertTrue(mCelsius.isFocused());
         
-        final double expected  = TemperatureConverter.fahrenheitToCelsius(f); // COMPLETE 
-        final double actual = mCelsius.getNumber(); // COMPLETE
+        final double expected  = TemperatureConverter.fahrenheitToCelsius(f); 
+        final double actual = mCelsius.getNumber(); 
         
         Log.d("ttest","expected :" + expected +",actual :" + actual );
         final double delta = Math.abs(expected - actual);
