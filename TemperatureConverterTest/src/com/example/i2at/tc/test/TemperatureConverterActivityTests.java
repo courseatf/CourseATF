@@ -120,7 +120,7 @@ public class TemperatureConverterActivityTests extends
 
     @UiThreadTest
     public void testCelsiusToFahrenheitConversion() {
-    	/* TODO 5-2: 하나의 field 에 값을 입력하면, 다른  field 에 해당 값이 실시간으로 변환되어야 함
+    	/* TODO 5-2: 하나의 field 에 값을 입력하면, 다른  field 에 해당 값이 실시간으로 변환되어야 함 */
         mCelsius.clear();
         mFahrenheit.clear();
         final double c = 100;
@@ -129,11 +129,11 @@ public class TemperatureConverterActivityTests extends
         assertEquals(c, mCelsius.getNumber());
         assertTrue(mFahrenheit.requestFocus());
         assertTrue(mFahrenheit.isFocused());
-        final double expected; // COMEPLETE
-        final double actual; // COMPLETE
+        final double expected = TemperatureConverter.celsiusToFahrenheit(c);
+        final double actual = mFahrenheit.getNumber();
         final double delta = Math.abs(expected - actual);
         assertTrue("delta=" + delta + " expected=" + expected + " actual=" + actual, delta < 0.005);
-        */
+
     	assertTrue(true);
     }
 
