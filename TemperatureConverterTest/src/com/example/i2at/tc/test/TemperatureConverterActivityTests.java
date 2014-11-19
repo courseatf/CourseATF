@@ -4,6 +4,8 @@
 
 package com.example.i2at.tc.test;
 
+import static android.test.ViewAsserts.assertRightAligned;
+import static android.test.ViewAsserts.assertVerticalCenterAligned;
 import android.app.Instrumentation;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.UiThreadTest;
@@ -13,10 +15,13 @@ import android.test.suitebuilder.annotation.Suppress;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.i2at.tc.EditNumber;
 import com.example.i2at.tc.TemperatureConverter;
 import com.example.i2at.tc.TemperatureConverterActivity;
+//import com.lge.assertiontestapp.R;
 
 /**
  * @author diego
@@ -89,6 +94,12 @@ public class TemperatureConverterActivityTests extends
         /* TODO 3: 숫자는 오른쪽 정렬로 되어야 하고 수직 중앙 정렬되어야 함
          * Hint:  EditText.getGravity()
          */
+    	int celsiusGravity = mCelsius.getGravity();
+    	int fahrenheitGravity = mFahrenheit.getGravity();
+    	
+    	assertEquals((Gravity.RIGHT|Gravity.CENTER_VERTICAL), celsiusGravity);
+    	assertEquals((Gravity.RIGHT|Gravity.CENTER_VERTICAL), fahrenheitGravity);
+    	
     }
 
     @SmallTest
