@@ -6,6 +6,7 @@ package com.example.i2at.tc.test;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
+import java.util.Iterator;
 
 import com.example.i2at.tc.TemperatureConverter;
 
@@ -30,6 +31,7 @@ public class TemperatureConverterTests extends TestCase {
 		sConversionTableDouble.put(-273.0, -459.40);
 	}
 
+	TemperatureConverter m_Tc;
 	/**
 	 * @param name
 	 */
@@ -58,6 +60,12 @@ public class TemperatureConverterTests extends TestCase {
 		/* TODO 6: 섭씨온도와 화씨온도를 서로 변환할 수 있어야 함. (기대 값의 허용오차는 0.005 로 가정)
 		 * 미리 준비 된 변환 테이블을 참조하여 작성(sConversionTableDouble)
 		 */
+		Iterator itr = sConversionTableDouble.keySet().iterator();
+		while(itr.hasNext()){
+			double c = (Double)itr.next();
+			double f = sConversionTableDouble.get(c);
+			assertEquals(c, m_Tc.fahrenheitToCelsius(f));
+		}		
 	}
 
 	/**
@@ -67,6 +75,12 @@ public class TemperatureConverterTests extends TestCase {
 		/* TODO 6: 섭씨온도와 화씨온도를 서로 변환할 수 있어야 함. (기대 값의 허용오차는 0.005 로 가정)
 		 * 미리 준비 된 변환 테이블을 참조하여 작성(sConversionTableDouble)
 		 */		
+		Iterator itr = sConversionTableDouble.keySet().iterator();
+		while(itr.hasNext()){
+			double c = (Double)itr.next();
+			double f = sConversionTableDouble.get(c);
+			assertEquals(f, m_Tc.celsiusToFahrenheit(c));
+		}		
 	}
 	
 	public final void testExceptionForLessThanAbsoluteZeroF() {
