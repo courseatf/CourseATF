@@ -29,6 +29,11 @@ public class TemperatureConverterTests extends TestCase {
 		sConversionTableDouble.put(-40.0, -40.0);
 		sConversionTableDouble.put(-273.0, -459.40);
 	}
+<<<<<<< HEAD
+=======
+
+	TemperatureConverter m_Tc;
+>>>>>>> a289d6e77e42b4bde5caa2a33e7472c5848d65d4
 	/**
 	 * @param name
 	 */
@@ -75,7 +80,7 @@ public class TemperatureConverterTests extends TestCase {
 	public void testCelsiusToFahrenheit() {
 		/* TODO 6: 섭씨온도와 화씨온도를 서로 변환할 수 있어야 함. (기대 값의 허용오차는 0.005 로 가정)
 		 * 미리 준비 된 변환 테이블을 참조하여 작성(sConversionTableDouble)
-		 */
+		 */		
 		Iterator itr = sConversionTableDouble.keySet().iterator();
 		while(itr.hasNext()){
 			double c = (Double)itr.next();
@@ -86,7 +91,6 @@ public class TemperatureConverterTests extends TestCase {
 			final double delta = Math.abs(expectFahrenheit - f);
 		    assertTrue("delta=" + delta + " expect=" + expectFahrenheit + " actual=" + f, delta < 0.005);
 		}
-
 	}
 	
 	public final void testExceptionForLessThanAbsoluteZeroF() {
