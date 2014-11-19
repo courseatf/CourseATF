@@ -11,3 +11,4 @@ course of android testing framework
 * ourteam: kyungsoo song Jaebeom Jeon
 * 5-coffee: hyunoklee
 * ATF: soyeon.lee evan.kim
+* bioIT: seungwon lee, seheon choi
